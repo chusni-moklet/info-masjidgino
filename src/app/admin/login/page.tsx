@@ -59,9 +59,8 @@ export default function AdminLoginPage() {
 
       <div className="w-full max-w-md glass-panel p-8 rounded-3xl border border-white/10 shadow-2xl z-10">
         <div className="flex flex-col items-center mb-8">
-          <div className="bg-white p-3 rounded-2xl border border-orange-500/20 w-20 h-20 flex items-center justify-center overflow-hidden shrink-0 shadow-md mb-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Logo Masjid" className="max-w-full max-h-full object-contain" />
+          <div className="bg-emerald-500/20 text-emerald-400 p-4 rounded-2xl border border-emerald-500/30 mb-4">
+            <Landmark className="w-8 h-8" />
           </div>
           <h2 className="text-2xl font-bold text-white tracking-wide uppercase text-center">
             Login Admin Signage
@@ -135,8 +134,8 @@ export default function AdminLoginPage() {
 
         <div className="mt-8 text-center text-xs text-slate-500">
           <p>Kredensial Default:</p>
-          <p className="mt-1 font-mono select-all">Email: masjidgino2026@admin.com</p>
-          <p className="font-mono select-all">Password: hidupkanmasjid</p>
+          <p className="mt-1 font-mono select-all">Email: masjid@google.com</p>
+          <p className="font-mono select-all">Password: merdeka</p>
         </div>
       </div>
     </div>
