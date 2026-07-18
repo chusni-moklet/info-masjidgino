@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --primary: #f97316; /* Orange-500 */
+  --primary-glow: rgba(249, 115, 22, 0.15);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary-emerald: var(--primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Map Emerald utility colors to Orange / Yellow (Logo style) */
+  --color-emerald-50: #fff7ed;
+  --color-emerald-100: #ffedd5;
+  --color-emerald-200: #fde047; /* Yellow / Amber accent */
+  --color-emerald-300: #facc15; /* Yellow / Amber accent */
+  --color-emerald-400: #fb923c; /* Orange-400 */
+  --color-emerald-500: #f97316; /* Orange-500 (Primary) */
+  --color-emerald-600: #ea580c; /* Orange-600 (Primary Hover) */
+  --color-emerald-700: #c2410c;
+  --color-emerald-800: #9a3412;
+  --color-emerald-900: #7c2d12;
+  --color-emerald-950: #431407;
 }
 
 body {
-  background: var(--background);
+  background: radial-gradient(circle at 50% 50%, #1e1104 0%, #070401 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow: hidden; /* Hide scrollbars for display TV mode */
+  user-select: none;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(18, 12, 8, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-glow {
+  background: rgba(249, 115, 22, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  box-shadow: 0 0 20px 0 rgba(249, 115, 22, 0.15);
+}
+
+/* Glowing text effects */
+.glow-green {
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.6), 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+.glow-amber {
+  text-shadow: 0 0 10px rgba(234, 179, 8, 0.6), 0 0 20px rgba(234, 179, 8, 0.3);
+}
+
+/* Pulse animation for active prayer */
+@keyframes prayer-pulse {
+  0%, 100% {
+    border-color: rgba(249, 115, 22, 0.3);
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.1);
+  }
+  50% {
+    border-color: rgba(249, 115, 22, 0.8);
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+  }
+}
+
+.active-prayer-card {
+  animation: prayer-pulse 2s infinite ease-in-out;
+  background: rgba(249, 115, 22, 0.1) !important;
+}
+
+/* Ticker text animations */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 25s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for elements while maintaining scrollability for admin views */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
