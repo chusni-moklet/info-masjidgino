@@ -59,8 +59,9 @@ export default function AdminLoginPage() {
 
       <div className="w-full max-w-md glass-panel p-8 rounded-3xl border border-white/10 shadow-2xl z-10">
         <div className="flex flex-col items-center mb-8">
-          <div className="bg-emerald-500/20 text-emerald-400 p-4 rounded-2xl border border-emerald-500/30 mb-4">
-            <Landmark className="w-8 h-8" />
+          <div className="bg-white p-3 rounded-2xl border border-orange-500/20 w-20 h-20 flex items-center justify-center overflow-hidden shrink-0 shadow-md mb-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Logo Masjid" className="max-w-full max-h-full object-contain" />
           </div>
           <h2 className="text-2xl font-bold text-white tracking-wide uppercase text-center">
             Login Admin Signage
